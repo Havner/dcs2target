@@ -1,5 +1,16 @@
 DCS to TARGET converter.
 
+Usage:
+Put the dcs2target directory directly in the DCS directory.
+You need cygwin or similar to compile it. Simple make will do.
+
+Once you have the binary run:
+./dcs2target_phase1.bat
+./dcs2target_phase2.exe
+
+The files will be in phase2 and phase2-raw directories. Macros from
+phase2 require inclusion of lib-usb.tmh.
+
 Credits:
 The lua part and format of the output file is based on the Sim2Target
 software by icemaker available here:
