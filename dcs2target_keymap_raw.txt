@@ -1,98 +1,98 @@
-EMPTY	USB[0x00]
-A                    USB[0x04] // [  4] a or A
-B                    USB[0x05] // [  5] b or B
-C                    USB[0x06] // [  6] c or C
-D                    USB[0x07] // [  7] d or D
-E                    USB[0x08] // [  8] e or E
-F                    USB[0x09] // [  9] f or F
-G                    USB[0x0A] // [ 10] g or G
-H                    USB[0x0B] // [ 11] h or H
-I                    USB[0x0C] // [ 12] i or I
-J                    USB[0x0D] // [ 13] j or J
-K                    USB[0x0E] // [ 14] k or K
-L                    USB[0x0F] // [ 15] l or L
-M                    USB[0x10] // [ 16] m or M
-N                    USB[0x11] // [ 17] n or N
-O                    USB[0x12] // [ 18] o or O
-P                    USB[0x13] // [ 19] p or P
-Q                    USB[0x14] // [ 20] q or Q
-R                    USB[0x15] // [ 21] r or R
-S                    USB[0x16] // [ 22] s or S
-T                    USB[0x17] // [ 23] t or T
-U                    USB[0x18] // [ 24] u or U
-V                    USB[0x19] // [ 25] v or V
-W                    USB[0x1A] // [ 26] w or W
-X                    USB[0x1B] // [ 27] x or X
-Y                    USB[0x1C] // [ 28] y or Y
-Z                    USB[0x1D] // [ 29] z or Z
-1                    USB[0x1E] // [ 30] 1 or !
-2                    USB[0x1F] // [ 31] 2 or @
-3                    USB[0x20] // [ 32] 3 or #
-4                    USB[0x21] // [ 33] 4 or $
-5                    USB[0x22] // [ 34] 5 or %
-6                    USB[0x23] // [ 35] 6 or ^
-7                    USB[0x24] // [ 36] 7 or &
-8                    USB[0x25] // [ 37] 8 or *
-9                    USB[0x26] // [ 38] 9 or (
-0                    USB[0x27] // [ 39] 0 or )
-Enter        USB[0x28] // [ 40] Return (Enter)
-Esc               USB[0x29] // [ 41] Escape
-Back    USB[0x2A] // [ 42] Delete (Backspace)
-Tab                  USB[0x2B] // [ 43] Tab
-Space             USB[0x2C] // [ 44] Spacebar
--               USB[0x2D] // [ 45] - or _
-=            USB[0x2E] // [ 46] = or +
-[          USB[0x2F] // [ 47] [ or {
-]         USB[0x30] // [ 48] ] or }
-\            USB[0x31] // [ 49] \ or |
-Europe1           USB[0x32] // [ 50] Non-US # or _
-;            USB[0x33] // [ 51] ; or :
-'                USB[0x34] // [ 52] ' or "
-`  USB[0x35] // [ 53] Grave Accent and Tilde
-,                USB[0x36] // [ 54] , or <
+EMPTY		USB[0x00]
+A		USB[0x04] // [  4] a or A
+B		USB[0x05] // [  5] b or B
+C		USB[0x06] // [  6] c or C
+D		USB[0x07] // [  7] d or D
+E		USB[0x08] // [  8] e or E
+F		USB[0x09] // [  9] f or F
+G		USB[0x0A] // [ 10] g or G
+H		USB[0x0B] // [ 11] h or H
+I		USB[0x0C] // [ 12] i or I
+J		USB[0x0D] // [ 13] j or J
+K		USB[0x0E] // [ 14] k or K
+L		USB[0x0F] // [ 15] l or L
+M		USB[0x10] // [ 16] m or M
+N		USB[0x11] // [ 17] n or N
+O		USB[0x12] // [ 18] o or O
+P		USB[0x13] // [ 19] p or P
+Q		USB[0x14] // [ 20] q or Q
+R		USB[0x15] // [ 21] r or R
+S		USB[0x16] // [ 22] s or S
+T		USB[0x17] // [ 23] t or T
+U		USB[0x18] // [ 24] u or U
+V		USB[0x19] // [ 25] v or V
+W		USB[0x1A] // [ 26] w or W
+X		USB[0x1B] // [ 27] x or X
+Y		USB[0x1C] // [ 28] y or Y
+Z		USB[0x1D] // [ 29] z or Z
+1		USB[0x1E] // [ 30] 1 or !
+2		USB[0x1F] // [ 31] 2 or @
+3		USB[0x20] // [ 32] 3 or #
+4		USB[0x21] // [ 33] 4 or $
+5		USB[0x22] // [ 34] 5 or %
+6		USB[0x23] // [ 35] 6 or ^
+7		USB[0x24] // [ 36] 7 or &
+8		USB[0x25] // [ 37] 8 or *
+9		USB[0x26] // [ 38] 9 or (
+0		USB[0x27] // [ 39] 0 or )
+Enter		USB[0x28] // [ 40] Return (Enter)
+Esc		USB[0x29] // [ 41] Escape
+Back		USB[0x2A] // [ 42] Delete (Backspace)
+Tab		USB[0x2B] // [ 43] Tab
+Space		USB[0x2C] // [ 44] Spacebar
+-		USB[0x2D] // [ 45] - or _
+=		USB[0x2E] // [ 46] = or +
+[		USB[0x2F] // [ 47] [ or {
+]		USB[0x30] // [ 48] ] or }
+\		USB[0x31] // [ 49] \ or |
+Europe1		USB[0x32] // [ 50] Non-US # or _
+;		USB[0x33] // [ 51] ; or :
+'		USB[0x34] // [ 52] ' or "
+`		USB[0x35] // [ 53] Grave Accent and Tilde
+,		USB[0x36] // [ 54] , or <
 .               USB[0x37] // [ 55] . or >
-/                USB[0x38] // [ 56] / or ?
-Caps             USB[0x39] // [ 57] Caps Lock
-F1                   USB[0x3A] // [ 58] F1
-F2                   USB[0x3B] // [ 59] F2
-F3                   USB[0x3C] // [ 60] F3
-F4                   USB[0x3D] // [ 61] F4
-F5                   USB[0x3E] // [ 62] F5
-F6                   USB[0x3F] // [ 63] F6
-F7                   USB[0x40] // [ 64] F7
-F8                   USB[0x41] // [ 65] F8
-F9                   USB[0x42] // [ 66] F9
-F10                  USB[0x43] // [ 67] F10
-F11                  USB[0x44] // [ 68] F11
-F12                  USB[0x45] // [ 69] F12
-SysRQ          USB[0x46] // [ 70] Print Screen
-ScrollLock           USB[0x47] // [ 71] Scroll Lock
-Pause                USB[0x48] // [ 72] Pause
-Insert               USB[0x49] // [ 73] Insert
-Home                 USB[0x4A] // [ 74] Home
-PageUp               USB[0x4B] // [ 75] Page Up
-Delete        USB[0x4C] // [ 76] Delete Forward
-End                  USB[0x4D] // [ 77] End
-PageDown             USB[0x4E] // [ 78] Page Down
-Right           USB[0x4F] // [ 79] Right Arrow
-Left            USB[0x50] // [ 80] Left Arrow
-Down            USB[0x51] // [ 81] Down Arrow
-Up              USB[0x52] // [ 82] Up Arrow
-NumLock           USB[0x53] // [ 83] Keypad NumLock or Clear
-Num/             USB[0x54] // [ 84] Keypad /
-Num*          USB[0x55] // [ 85] Keypad *
-Num-            USB[0x56] // [ 86] Keypad -
-Num+              USB[0x57] // [ 87] Keypad +
-NumEnter             USB[0x58] // [ 88] Keypad Enter
-Num1                 USB[0x59] // [ 89] Keypad 1 or End
-Num2                 USB[0x5A] // [ 90] Keypad 2 or Down Arrow
-Num3                 USB[0x5B] // [ 91] Keypad 3 or Page Down
-Num4                 USB[0x5C] // [ 92] Keypad 4 or Left Arrow
-Num5                 USB[0x5D] // [ 93] Keypad 5
-Num6                 USB[0x5E] // [ 94] Keypad 6 or Right Arrow
-Num7                 USB[0x5F] // [ 95] Keypad 7 or Home
-Num8                 USB[0x60] // [ 96] Keypad 8 or Up Arrow
-Num9                 USB[0x61] // [ 97] Keypad 9 or Page Up
-Num0                 USB[0x62] // [ 98] Keypad 0 or Insert
-Num.            USB[0x63] // [ 99] Keypad . or Delete
-Europe2       USB[0x64] // [100] Non-US \ or |
+/		USB[0x38] // [ 56] / or ?
+Caps		USB[0x39] // [ 57] Caps Lock
+F1		USB[0x3A] // [ 58] F1
+F2		USB[0x3B] // [ 59] F2
+F3		USB[0x3C] // [ 60] F3
+F4		USB[0x3D] // [ 61] F4
+F5		USB[0x3E] // [ 62] F5
+F6		USB[0x3F] // [ 63] F6
+F7		USB[0x40] // [ 64] F7
+F8		USB[0x41] // [ 65] F8
+F9		USB[0x42] // [ 66] F9
+F10		USB[0x43] // [ 67] F10
+F11		USB[0x44] // [ 68] F11
+F12		USB[0x45] // [ 69] F12
+SysRQ		USB[0x46] // [ 70] Print Screen
+ScrollLock	USB[0x47] // [ 71] Scroll Lock
+Pause		USB[0x48] // [ 72] Pause
+Insert		USB[0x49] // [ 73] Insert
+Home		USB[0x4A] // [ 74] Home
+PageUp		USB[0x4B] // [ 75] Page Up
+Delete		USB[0x4C] // [ 76] Delete Forward
+End		USB[0x4D] // [ 77] End
+PageDown	USB[0x4E] // [ 78] Page Down
+Right		USB[0x4F] // [ 79] Right Arrow
+Left		USB[0x50] // [ 80] Left Arrow
+Down		USB[0x51] // [ 81] Down Arrow
+Up		USB[0x52] // [ 82] Up Arrow
+NumLock		USB[0x53] // [ 83] Keypad NumLock or Clear
+Num/		USB[0x54] // [ 84] Keypad /
+Num*		USB[0x55] // [ 85] Keypad *
+Num-		USB[0x56] // [ 86] Keypad -
+Num+		USB[0x57] // [ 87] Keypad +
+NumEnter	USB[0x58] // [ 88] Keypad Enter
+Num1		USB[0x59] // [ 89] Keypad 1 or End
+Num2		USB[0x5A] // [ 90] Keypad 2 or Down Arrow
+Num3		USB[0x5B] // [ 91] Keypad 3 or Page Down
+Num4		USB[0x5C] // [ 92] Keypad 4 or Left Arrow
+Num5		USB[0x5D] // [ 93] Keypad 5
+Num6		USB[0x5E] // [ 94] Keypad 6 or Right Arrow
+Num7		USB[0x5F] // [ 95] Keypad 7 or Home
+Num8		USB[0x60] // [ 96] Keypad 8 or Up Arrow
+Num9		USB[0x61] // [ 97] Keypad 9 or Page Up
+Num0		USB[0x62] // [ 98] Keypad 0 or Insert
+Num.		USB[0x63] // [ 99] Keypad . or Delete
+Europe2		USB[0x64] // [100] Non-US \ or |

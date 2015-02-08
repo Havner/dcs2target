@@ -1,0 +1,6 @@
+DCS to TARGET converter.
+
+Credits:
+The lua part and format of the output file is based on the Sim2Target
+software by icemaker available here:
+http://www.checksix-fr.com/bibliotheque/index.php?page=detail&ID=6111
