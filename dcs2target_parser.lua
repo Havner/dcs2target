@@ -3,18 +3,18 @@
 local dcs_folder = arg[1]..'/'
 
 local modules = {
-	'Mods/aircraft/A-10C/Input',
-	'Mods/aircraft/Bf-109K-4/Input',
-	'Mods/aircraft/F-86/Input',
-	'Mods/aircraft/FW-190D9/Input',
-	'Mods/aircraft/Ka-50/Input',
-	'Mods/aircraft/Mi-8MTV2/Input',
-	'Mods/aircraft/P-51D/Input',
-	'Mods/aircraft/Su-25T/Input',
-	'Mods/aircraft/TF-51D/Input',
-	'Mods/aircraft/Uh-1H/Input',
-	'Mods/aircraft/Flaming Cliffs/Input',
-	'Mods/tech/CombinedArms',
+	'Mods/aircraft/A-10C/Input/',
+	'Mods/aircraft/Bf-109K-4/Input/',
+	'Mods/aircraft/F-86/Input/',
+	'Mods/aircraft/FW-190D9/Input/',
+	'Mods/aircraft/Ka-50/Input/',
+	'Mods/aircraft/Mi-8MTV2/Input/',
+	'Mods/aircraft/P-51D/Input/',
+	'Mods/aircraft/Su-25T/Input/',
+	'Mods/aircraft/TF-51D/Input/',
+	'Mods/aircraft/Uh-1H/Input/',
+	'Mods/aircraft/Flaming Cliffs/Input/',
+	'Mods/tech/CombinedArms/',
 }
 
 -- MODULES
@@ -68,11 +68,11 @@ local function getAircrafts()
 				file ~= ".." and
 				file ~= ".svn"
 			then
-				local attr = lfs.attributes (dcs_folder..mod..'/'..file)
+				local attr = lfs.attributes (dcs_folder..mod..file)
 				if attr.mode == "directory" then
-					local name = io.open(dcs_folder..mod..'/'..file..'/'..'name.lua')
+					local name = io.open(dcs_folder..mod..file..'/'..'name.lua')
 					if name then
-						aircrafts[file] = mod..'/'..file
+						aircrafts[file] = mod..file
 						io.close(name)
 						print(file)
 					end
@@ -84,9 +84,9 @@ local function getAircrafts()
 end
 
 function load_layout(name,dir,file)
-	-- this is a variable DCS sets for profiles
-	folder = dir..'/'
-	local f = loadfile(dcs_folder..dir..'/'..file)
+	-- this is a global variable DCS sets for profiles
+	folder = dir
+	local f = loadfile(dcs_folder..dir..file)
 	if f == nil then
 		return
 	end
@@ -134,8 +134,8 @@ for aircraft,dir in pairs(getAircrafts()) do
 	end
 	-- ignore variants (_easy, _gunner, etc)
 --	if not string.find(aircraft, '_') then
-		--load_layout_folder(aircraft.."_joystick",dir.."/joystick")
-		load_layout_folder(aircraft.."_keyboard",dir.."/keyboard")
+		--load_layout_folder(aircraft.."_joystick",dir.."/joystick/")
+		load_layout_folder(aircraft.."_keyboard",dir.."/keyboard/")
 		print(dir)
 --	end
 end
