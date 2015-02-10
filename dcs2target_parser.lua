@@ -95,11 +95,7 @@ end
 
 function load_layout_dir(name, dir)
 	for luamap in lfs.dir(dcs_folder..dir) do
-		if luamap ~= "."    and
-			luamap ~= ".."   and
-			luamap ~= ".svn" and
-			string.sub(luamap,-4) == ".lua"
-		then
+		if string.sub(luamap,-4) == ".lua" then
 			local luamap_wout_ext = string.sub(luamap, 1, -5)
 			load_layout(name.."_"..luamap_wout_ext, dir, luamap)
 		end
