@@ -60,48 +60,48 @@ local function translate(str)
 	return result
 end
 
-local function getAircrafts()
-	local aircrafts = {}
-	for i,mod in pairs(modules or {}) do
-		for file in lfs.dir(dcs_folder..mod) do
-			if file ~= "." and
-				file ~= ".." and
-				file ~= ".svn"
+local function getVariants()
+	local variants = {}
+	for i, mod in pairs(modules or {}) do
+		for variant in lfs.dir(dcs_folder..mod) do
+			if variant ~= "." and
+				variant ~= ".." and
+				variant ~= ".svn"
 			then
-				local attr = lfs.attributes (dcs_folder..mod..file)
+				local attr = lfs.attributes (dcs_folder..mod..variant)
 				if attr.mode == "directory" then
-					local name = io.open(dcs_folder..mod..file..'/'..'name.lua')
+					local name = io.open(dcs_folder..mod..variant..'/'..'name.lua')
 					if name then
-						aircrafts[file] = mod..file
+						variants[variant] = mod..variant
 						io.close(name)
-						print(file)
+						print(variant)
 					end
 				end
 			end
 		end
 	end
-	return aircrafts
+	return variants
 end
 
-function load_layout(name,dir,file)
+function load_layout(name, dir, luamap)
 	-- this is a global variable DCS sets for profiles
 	folder = dir
-	local f = loadfile(dcs_folder..dir..file)
+	local f = loadfile(dcs_folder..dir..luamap)
 	if f == nil then
 		return
 	end
 	planes[name] = f()
 end
 
-function load_layout_folder(name,dir)
-	for file in lfs.dir(dcs_folder..dir) do
-		if file ~= "."    and
-			file ~= ".."   and
-			file ~= ".svn" and
-			string.sub(file,-4) == ".lua"
+function load_layout_dir(name, dir)
+	for luamap in lfs.dir(dcs_folder..dir) do
+		if luamap ~= "."    and
+			luamap ~= ".."   and
+			luamap ~= ".svn" and
+			string.sub(luamap,-4) == ".lua"
 		then
-			local filename_wout_ext = string.sub(file,1,-5)
-			load_layout(name.."_"..filename_wout_ext,dir,file)
+			local luamap_wout_ext = string.sub(luamap, 1, -5)
+			load_layout(name.."_"..luamap_wout_ext, dir, luamap)
 		end
 	end
 end
@@ -125,18 +125,18 @@ local function getCombosName(combos)
 end
 
 -- MAIN FLOW
-for aircraft,dir in pairs(getAircrafts()) do
+for name,dir in pairs(getVariants()) do
 	-- do some name formatting
-	aircraft = string.upper(aircraft)
+	name = string.upper(name)
 	-- combined arms
-	if aircraft == 'INPUT' then
-		aircraft = 'CA'
+	if name == 'INPUT' then
+		name = 'CA'
 	end
-	-- ignore variants (_easy, _gunner, etc)
+	-- ignore variants other then realistic (_easy, _gunner, etc)
 --	if not string.find(aircraft, '_') then
-		--load_layout_folder(aircraft.."_joystick",dir.."/joystick/")
-		load_layout_folder(aircraft.."_keyboard",dir.."/keyboard/")
-		print(dir)
+		--load_layout_dir(aircraft.."_joystick", dir.."/joystick/")
+		load_layout_dir(name.."_keyboard", dir.."/keyboard/")
+		print(name..':\t\t'..dir)
 --	end
 end
 
