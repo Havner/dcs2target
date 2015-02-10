@@ -1,6 +1,6 @@
 -- CONFIGURATION
 
-local dcs_folder = '../'
+local dcs_folder = arg[1]..'/'
 
 local modules = {
 	'Mods/aircraft/A-10C/Input',
