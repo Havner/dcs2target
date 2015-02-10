@@ -1,18 +1,20 @@
 -- CONFIGURATION
 
+local dcs_folder = '../'
+
 local modules = {
-	'../Mods/aircraft/A-10C/Input',
-	'../Mods/aircraft/Bf-109K-4/Input',
-	'../Mods/aircraft/F-86/Input',
-	'../Mods/aircraft/FW-190D9/Input',
-	'../Mods/aircraft/Ka-50/Input',
-	'../Mods/aircraft/Mi-8MTV2/Input',
-	'../Mods/aircraft/P-51D/Input',
-	'../Mods/aircraft/Su-25T/Input',
-	'../Mods/aircraft/TF-51D/Input',
-	'../Mods/aircraft/Uh-1H/Input',
-	'../Mods/aircraft/Flaming Cliffs/Input',
-	'../Mods/tech/CombinedArms',
+	'Mods/aircraft/A-10C/Input',
+	'Mods/aircraft/Bf-109K-4/Input',
+	'Mods/aircraft/F-86/Input',
+	'Mods/aircraft/FW-190D9/Input',
+	'Mods/aircraft/Ka-50/Input',
+	'Mods/aircraft/Mi-8MTV2/Input',
+	'Mods/aircraft/P-51D/Input',
+	'Mods/aircraft/Su-25T/Input',
+	'Mods/aircraft/TF-51D/Input',
+	'Mods/aircraft/Uh-1H/Input',
+	'Mods/aircraft/Flaming Cliffs/Input',
+	'Mods/tech/CombinedArms',
 }
 
 -- MODULES
@@ -35,17 +37,9 @@ function defaultDeviceAssignmentFor(str)
 	return nil
 end
 
--- sometimes add '../' due to the fact we don't run in the game dir
--- sometimes don't add if the path passed already contains it
--- the scripts will be run like:
--- dofile("Config/....")
--- dofile("../Mods/....")
 dofile_old = dofile
 function dofile(f)
-	if string.sub(f, 1, 3) == '../' then
-		return dofile_old(f)
-	end
-	return dofile_old('../'..f)
+	return dofile_old(dcs_folder..f)
 end
 external_profile = dofile
 
@@ -69,14 +63,14 @@ end
 local function getAircrafts()
 	local aircrafts = {}
 	for i,mod in pairs(modules or {}) do
-		for file in lfs.dir(mod) do
+		for file in lfs.dir(dcs_folder..mod) do
 			if file ~= "." and
 				file ~= ".." and
 				file ~= ".svn"
 			then
-				local attr = lfs.attributes (mod..'/'..file)
+				local attr = lfs.attributes (dcs_folder..mod..'/'..file)
 				if attr.mode == "directory" then
-					local name = io.open(mod..'/'..file..'/'..'name.lua')
+					local name = io.open(dcs_folder..mod..'/'..file..'/'..'name.lua')
 					if name then
 						aircrafts[file] = mod..'/'..file
 						io.close(name)
@@ -92,22 +86,22 @@ end
 function load_layout(name,dir,file)
 	-- this is a variable DCS sets for profiles
 	folder = dir..'/'
-	local f = loadfile(dir..'/'..file)
+	local f = loadfile(dcs_folder..dir..'/'..file)
 	if f == nil then
 		return
 	end
 	planes[name] = f()
 end
 
-function load_layout_folder(name,folder)
-	for file in lfs.dir(folder) do
+function load_layout_folder(name,dir)
+	for file in lfs.dir(dcs_folder..dir) do
 		if file ~= "."    and
 			file ~= ".."   and
 			file ~= ".svn" and
 			string.sub(file,-4) == ".lua"
 		then
 			local filename_wout_ext = string.sub(file,1,-5)
-			load_layout(name.."_"..filename_wout_ext,folder,file)
+			load_layout(name.."_"..filename_wout_ext,dir,file)
 		end
 	end
 end
@@ -131,7 +125,7 @@ local function getCombosName(combos)
 end
 
 -- MAIN FLOW
-for aircraft,folder in pairs(getAircrafts()) do
+for aircraft,dir in pairs(getAircrafts()) do
 	-- do some name formatting
 	aircraft = string.upper(aircraft)
 	-- combined arms
@@ -140,9 +134,9 @@ for aircraft,folder in pairs(getAircrafts()) do
 	end
 	-- ignore variants (_easy, _gunner, etc)
 --	if not string.find(aircraft, '_') then
-		--load_layout_folder(aircraft.."_joystick",folder.."/joystick")
-		load_layout_folder(aircraft.."_keyboard",folder.."/keyboard")
-		print(folder)
+		--load_layout_folder(aircraft.."_joystick",dir.."/joystick")
+		load_layout_folder(aircraft.."_keyboard",dir.."/keyboard")
+		print(dir)
 --	end
 end
 
