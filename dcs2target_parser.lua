@@ -25,7 +25,7 @@ gettext.set_locale_dir('l10n')
 gettext.init()
 
 -- VARIABLES
-local planes = {}
+local mappings = {}
 local EMPTY = '"EMPTY"'
 
 -- GLOBAL FUNCTIONS FOR THE MAPPERS
@@ -90,7 +90,7 @@ function load_layout(name, dir, luamap)
 	if f == nil then
 		return
 	end
-	planes[name] = f()
+	mappings[name] = f()
 end
 
 function load_layout_dir(name, dir)
@@ -125,7 +125,7 @@ local function getCombosName(combos)
 end
 
 -- MAIN FLOW
-for name,dir in pairs(getVariants()) do
+for name, dir in pairs(getVariants()) do
 	-- do some name formatting
 	name = string.upper(name)
 	-- combined arms
@@ -143,11 +143,11 @@ end
 prefix = 'phase1/'
 lfs.mkdir(prefix)
 
-for name, plane in pairs(planes) do
+for name, mapping in pairs(mappings) do
 	local file = io.open(prefix..name .. '.txt', 'w')
 	local file_conflict = nil
 	local tb = {}
-	for i, command in pairs(plane.keyCommands or {}) do
+	for i, command in pairs(mapping.keyCommands or {}) do
 		local cmb  = getCombosName(command.combos)
 		local data = (command.name or '') .. '\t' .. (command.category or '') .. '\n'
 		if tb[cmb] == nil then
@@ -164,7 +164,7 @@ for name, plane in pairs(planes) do
 				   (translate(command.name) or '')    ..'\t' ..
 				   (translate(command.category)or '') ..'\n')
 	end
-	for i, command in pairs(plane.axisCommands or {}) do
+	for i, command in pairs(mapping.axisCommands or {}) do
 		file:write(getCombosName(command.combos)               .. '\t' ..
 				   (translate(command.name) or '')     .. '\t' ..
 				   (translate(command.category) or '') .. '\n')
