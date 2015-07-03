@@ -8,6 +8,7 @@ local modules = {
 	'Mods/aircraft/F-86/Input/',
 	'Mods/aircraft/FW-190D9/Input/',
 	'Mods/aircraft/Ka-50/Input/',
+	'Mods/aircraft/MIG-21bis/Input/',
 	'Mods/aircraft/Mi-8MTV2/Input/',
 	'Mods/aircraft/P-51D/Input/',
 	'Mods/aircraft/Su-25T/Input/',

@@ -66,7 +66,7 @@ F10		USB[0x43] // [ 67] F10
 F11		USB[0x44] // [ 68] F11
 F12		USB[0x45] // [ 69] F12
 SysRQ		USB[0x46] // [ 70] Print Screen
-ScrollLock	USB[0x47] // [ 71] Scroll Lock
+Scroll		USB[0x47] // [ 71] Scroll Lock
 Pause		USB[0x48] // [ 72] Pause
 Insert		USB[0x49] // [ 73] Insert
 Home		USB[0x4A] // [ 74] Home
