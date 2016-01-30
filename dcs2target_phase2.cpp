@@ -112,6 +112,13 @@ std::string convShortcut(const std::string &s)
 
 	for (StringVector::const_iterator it = v.begin(); it != v.end(); ++it)
 	{
+		if (it->substr(0, 3) == "JOY")  // WTF Mig-21?
+		{
+			l.clear();
+			l.push_front("USB[0x00]");
+			break;
+		}
+
 		if (it == v.begin())
 			l.push_front(convKey(*it, gKeyMap));
 		else
