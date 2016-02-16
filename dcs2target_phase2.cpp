@@ -165,6 +165,7 @@ std::string fixName(const std::string &s)
 	replaceAll(ret, "(", "_");
 	replaceAll(ret, ")", "_");
 	replaceAll(ret, "/", "_");
+	replaceAll(ret, "%", "_");
 	replaceAll(ret, "&", "and");
 
 	// TM defines can't start with a number
