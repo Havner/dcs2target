@@ -147,6 +147,15 @@ void replaceAll(std::string& str, const std::string& from, const std::string& to
 	}
 }
 
+void replaceAtEnd(std::string& str, const std::string& from, const std::string& to)
+{
+	if(from.empty())
+		return;
+	size_t pos = str.length() - from.length();
+	if (str.find(from, pos) != std::string::npos)
+		str.replace(pos, from.length(), to);
+}
+
 std::string fixName(const std::string &s)
 {
 	std::string ret = s;
@@ -155,17 +164,19 @@ std::string fixName(const std::string &s)
 	replaceAll(ret, " / ", "_");
 	replaceAll(ret, ". ", "_");
 	replaceAll(ret, " ", "_");
-	replaceAll(ret, "-", "_");
 	replaceAll(ret, ",", "_");
 	replaceAll(ret, ".", "_");
 	replaceAll(ret, "#", "");
 	replaceAll(ret, "'", "");
 	replaceAll(ret, ":", "_");
-	replaceAll(ret, "+", "_");
 	replaceAll(ret, "(", "_");
 	replaceAll(ret, ")", "_");
 	replaceAll(ret, "/", "_");
 	replaceAll(ret, "%", "_");
+	replaceAtEnd(ret, "+", "inc");	// Special case for MiG-21
+	replaceAtEnd(ret, "-", "dec");	// Special case for MiG-21
+	replaceAll(ret, "+", "_");
+	replaceAll(ret, "-", "_");
 	replaceAll(ret, "&", "and");
 
 	// TM defines can't start with a number
