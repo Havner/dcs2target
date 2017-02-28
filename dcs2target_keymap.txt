@@ -42,6 +42,7 @@ Tab		USB_TAB                 USB[0x2B] // [ 43] Tab
 Space		USB_SPACEBAR            USB[0x2C] // [ 44] Spacebar
 -		USB_HYPHEN              USB[0x2D] // [ 45] - or _
 =		USB_EQUALSIGN           USB[0x2E] // [ 46] = or +
++		USB_EQUALSIGN           USB[0x2E] // [ 46] = or +
 [		USB_OPENBRACKET         USB[0x2F] // [ 47] [ or {
 ]		USB_CLOSEBRACKET        USB[0x30] // [ 48] ] or }
 \		USB_BACKSLASH           USB[0x31] // [ 49] \ or |

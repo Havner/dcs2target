@@ -1,3 +1,5 @@
+#define _BSD_SOURCE
+
 #include<iostream>
 #include<fstream>
 #include<sstream>
@@ -190,6 +192,8 @@ void doPlane(const std::string &lua, const std::string &target)
 {
 	std::string endl = "\r\n";
 
+	std::cout << lua << " -> " << target << std::endl;
+
 	MapMap cats;
 	std::ifstream in(lua.c_str());
 	std::ofstream dups;
@@ -278,11 +282,13 @@ int main(int argc, char *argv[])
 	loadModMap();
 	StringVector files = findFiles(gPhase1);
 
+	std::cout << std::endl << "\t=== PARSING REGULAR MAPS ===" << std::endl;
 	mkdir(gPhase2.c_str(), 0755);
 	loadKeyMap("dcs2target_keymap.txt");
 	for (size_t i = 0; i < files.size(); ++i)
 		doPlane(gPhase1 + files[i], gPhase2 + getPlaneName(files[i]));
 
+	std::cout << std::endl << "\t=== PARSING RAW MAPS ===" << std::endl;
 	mkdir(gPhase2raw.c_str(), 0755);
 	loadKeyMap("dcs2target_keymap_raw.txt");
 	for (size_t i = 0; i < files.size(); ++i)

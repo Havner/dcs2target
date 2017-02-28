@@ -1,3 +1,4 @@
+@echo off
 rem set DCS_FOLDER=C:\Games\DCS
 set DCS_FOLDER=..
 set LUA_CPATH=%DCS_FOLDER%\bin\lua-?.dll;%DCS_FOLDER%\bin\?.dll

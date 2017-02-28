@@ -42,6 +42,7 @@ Tab		USB[0x2B] // [ 43] Tab
 Space		USB[0x2C] // [ 44] Spacebar
 -		USB[0x2D] // [ 45] - or _
 =		USB[0x2E] // [ 46] = or +
++		USB[0x2E] // [ 46] = or +
 [		USB[0x2F] // [ 47] [ or {
 ]		USB[0x30] // [ 48] ] or }
 \		USB[0x31] // [ 49] \ or |
